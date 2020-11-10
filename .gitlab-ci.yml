@@ -85,5 +85,11 @@ dependencyScanning:
     # Run snyk auth, snyk monitor, snyk test to break build and output report
     - snyk auth $SNYK_TOKEN
     - snyk monitor --all-projects --remote-repo-url=Gradle_GitLab_CI_CD
-    - snyk test --all-projects
+    - snyk test --all-projects --json | snyk-to-html -o snyk_results.html
+
+  #output results
+  artifacts:
+    when: always
+    paths:
+      - snyk_results.html
 
