@@ -20,6 +20,6 @@ jobs:
     - run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
     - name: Snyk OS Scanning
-      run: snyk test --all-projects
+      run: snyk test --file=app/build.gradle
       continue-on-error: true
       
