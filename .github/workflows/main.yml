@@ -23,3 +23,7 @@ jobs:
       run: snyk test --file=app/build.gradle
       continue-on-error: true
       
+    - name: Snyk OS monitoring
+      run: snyk monitor --file=app/build.gradle --org=dfe66b48-2bf2-4396-b77a-dfdb980e2cf8
+      continue-on-error: true
+      
